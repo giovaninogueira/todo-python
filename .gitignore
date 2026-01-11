@@ -1,0 +1,70 @@
+# Python
+# Byte-code files
+*.pyc
+__pycache__/
+[0-9]*~.py
+*.orig
+
+# Distributions and packaging
+.Python
+build/
+dist/
+eggs/
+*.egg-info/
+*.egg
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.whl
+
+# C extensions
+*.so
+*.pyd
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Editor/IDE-specific files
+.idea/  # For PyCharm/IntelliJ
+.vscode/ # For VS Code (consider adding specific settings if needed)
+*.swp
+*.sublime-workspace
+*.sublime-project
+
+# Unit test / coverage
+.coverage
+.tox
+pytestcache/
+nosetests.xml
+coverage.xml
+
+# Specific directories
+instance/
+.webassets-cache
+.mypy_cache/
+.pyre/
+.dmypy.json
+celerybeat.pid
+
+# Sphinx documentation
+docs/_build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Misc
+pip-log.txt
+pip-delete-this-arg.txt
+htmlcov/
+.cache/
+.pytest_cache/
