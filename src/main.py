@@ -13,6 +13,7 @@ app.include_router(tasks_router)
 
 Base.metadata.create_all(bind=engine)
 
+
 @app.get("/", tags=["root"])
 def red_root():
     return {"message": "Welcome to the Todo API!"}

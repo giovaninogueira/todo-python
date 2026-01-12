@@ -11,6 +11,7 @@ from schemas.task_status import TaskStatusDTO
 
 router = APIRouter(prefix="/tasks", tags=["tasks"])
 
+
 @router.get("/")
 def get_tasks(db: Session = Depends(get_db), user_id=Depends(auth_middleware)):
     task_repository = TaskRepository(db)

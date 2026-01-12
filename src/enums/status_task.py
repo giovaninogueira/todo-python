@@ -1,5 +1,6 @@
 import enum
 
+
 class StatusTask(enum.Enum):
     BACKLOG = "backlog"
     TODO = "todo"
