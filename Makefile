@@ -1,4 +1,6 @@
 run:
-	fastapi dev ./src/main.py
-freeze:
-	pip freeze > requirements.txt
+	uv run fastapi dev ./src/main.py
+install:
+	uv install
+sync:
+	uv sync

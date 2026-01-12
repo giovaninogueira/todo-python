@@ -5,6 +5,9 @@ class TaskRepository:
     def __init__(self, db_session: Session):
         self.db_session = db_session
         
+    def get_tasks_by_user(self, user_id: int) -> list[TaskEntity]:
+        return self.db_session.query(TaskEntity).filter(TaskEntity.user_id == user_id).all()
+        
     def find_by_id_and_user(self, task_id: int, user_id: int) -> TaskEntity:
         return self.db_session.query(TaskEntity).filter(TaskEntity.id == task_id, TaskEntity.user_id == user_id).first()
     

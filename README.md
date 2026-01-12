@@ -38,43 +38,40 @@ src/
 
 ### Pré-requisitos
 
-- Python 3.8+
-- pip
+- Python 3.13+
+- UV (gerenciador de pacotes Python)
 
 ### Instalação
 
-1. Clone o repositório:
+1. **Instale o UV** (se ainda não tiver):
+```bash
+# No macOS/Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source $HOME/.local/bin/env
+
+# No Windows
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+2. Clone o repositório:
 ```bash
 git clone https://github.com/giovaninogueira/todo-python.git
 cd todo-python
 ```
 
-2. Crie um ambiente virtual:
+3. Configure as variáveis de ambiente:
 ```bash
-python -m venv venv
+cp .env.example .env
 ```
 
-3. Ative o ambiente virtual:
+4. Instale as dependências com UV:
 ```bash
-# No macOS/Linux
-source venv/bin/activate
-
-# No Windows
-venv\Scripts\activate
-```
-
-4. Instale as dependências:
-```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 5. Execute a aplicação:
 ```bash
-make run
-```
-ou
-```bash
-fastapi dev ./src/main.py
+uv run fastapi dev ./src/main.py
 ```
 
 A API estará disponível em: `http://localhost:8000`
@@ -134,12 +131,20 @@ O projeto utiliza SQLite como banco de dados padrão. O arquivo `db.sqlite3` é 
 
 ## 📝 Scripts Disponíveis
 
-No Makefile você encontra:
+### Usando UV (recomendado):
+```bash
+uv run fastapi dev ./src/main.py  # Executa a aplicação em modo desenvolvimento
+uv sync                           # Instala/atualiza dependências
+uv add <pacote>                   # Adiciona nova dependência
+```
 
+### Usando Makefile:
 ```bash
 make run     # Executa a aplicação em modo desenvolvimento
 make freeze  # Atualiza o requirements.txt com as dependências atuais
 ```
+
+> **Nota**: O projeto agora usa UV como gerenciador de pacotes. O UV oferece instalação mais rápida de dependências e melhor gerenciamento de ambiente virtual.
 
 ## 🤝 Contribuindo
 
